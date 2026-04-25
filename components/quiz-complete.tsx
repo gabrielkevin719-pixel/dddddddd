@@ -142,7 +142,7 @@ export function QuizComplete() {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => router.push("/oferta")}
+            onClick={() => router.push("/vsl")}
             className="w-full flex items-center justify-center gap-3 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg py-4 px-6 shadow-lg shadow-primary/30 transition-all"
           >
             VER MI PROTOCOLO PERSONALIZADO
