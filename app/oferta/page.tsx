@@ -120,10 +120,26 @@ export default function OfertaPage() {
       </div>
 
       <main className="container mx-auto px-4 py-8 max-w-4xl">
+        {/* Video Section Top - First Thing User Sees */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-10"
+        >
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `<vturb-smartplayer id="vid-69ec3cb779a9b357d90e199b" style="display: block; margin: 0 auto; width: 100%; max-width: 100%;"></vturb-smartplayer>`,
+              }}
+            />
+          </div>
+        </motion.div>
+
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
           className="text-center mb-10"
         >
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4">
@@ -156,22 +172,6 @@ export default function OfertaPage() {
             <p className="text-sm text-muted-foreground mt-2">
               Excelente compatibilidad con el protocolo
             </p>
-          </div>
-        </motion.div>
-
-        {/* Video Section Top */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mb-10"
-        >
-          <div className="rounded-2xl overflow-hidden shadow-2xl">
-            <div
-              dangerouslySetInnerHTML={{
-                __html: `<vturb-smartplayer id="vid-69ec3cb779a9b357d90e199b" style="display: block; margin: 0 auto; width: 100%; max-width: 100%;"></vturb-smartplayer>`,
-              }}
-            />
           </div>
         </motion.div>
 
