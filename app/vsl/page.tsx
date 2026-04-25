@@ -12,10 +12,10 @@ export default function VSLPage() {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    // Show button after 30 seconds (or when video reaches certain point)
+    // Show button after 20:44 (1244 seconds) when the product value is mentioned
     const timer = setTimeout(() => {
       setShowButton(true);
-    }, 30000);
+    }, 1244000);
 
     return () => clearTimeout(timer);
   }, []);
