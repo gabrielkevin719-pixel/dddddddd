@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Script from "next/script";
 import { 
   CheckCircle, 
   Shield, 
@@ -160,7 +159,7 @@ export default function OfertaPage() {
           </div>
         </motion.div>
 
-        {/* Video Section */}
+        {/* Video Section Top */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -169,12 +168,9 @@ export default function OfertaPage() {
         >
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <div
-              id="vid-69ec3cb779a9b357d90e199b"
-              style={{ display: "block", margin: "0 auto", width: "100%", maxWidth: "100%" }}
-            />
-            <Script
-              src="https://scripts.converteai.net/1b27179a-ba8a-4485-adab-86acabe00490/players/69ec3cb779a9b357d90e199b/v4/player.js"
-              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `<vturb-smartplayer id="vid-69ec3cb779a9b357d90e199b" style="display: block; margin: 0 auto; width: 100%; max-width: 100%;"></vturb-smartplayer>`,
+              }}
             />
           </div>
         </motion.div>
@@ -419,6 +415,25 @@ export default function OfertaPage() {
                 <p className="text-muted-foreground text-sm">{faq.a}</p>
               </div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Video Section Bottom */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.85 }}
+          className="mb-10"
+        >
+          <h2 className="text-2xl font-bold text-center text-foreground mb-6">
+            Mira El Video Nuevamente
+          </h2>
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `<vturb-smartplayer id="vid-69ec3cb779a9b357d90e199b-2" style="display: block; margin: 0 auto; width: 100%; max-width: 100%;"></vturb-smartplayer>`,
+              }}
+            />
           </div>
         </motion.div>
 

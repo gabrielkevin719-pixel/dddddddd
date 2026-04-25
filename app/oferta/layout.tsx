@@ -32,6 +32,12 @@ export default function OfertaLayout({
       <link rel="dns-prefetch" href="https://images.converteai.net" />
       <link rel="dns-prefetch" href="https://api.vturb.com.br" />
       
+      {/* VTurb Player Script */}
+      <Script
+        src="https://scripts.converteai.net/1b27179a-ba8a-4485-adab-86acabe00490/players/69ec3cb779a9b357d90e199b/v4/player.js"
+        strategy="afterInteractive"
+      />
+      
       {children}
     </>
   );
