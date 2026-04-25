@@ -1,28 +1,34 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Play, Users, Radio, Rocket } from "lucide-react";
+import { Rocket } from "lucide-react";
+import Script from "next/script";
 
 interface VideoLandingProps {
   onStartQuiz: () => void;
 }
 
 export function VideoLanding({ onStartQuiz }: VideoLandingProps) {
-  const [viewerCount, setViewerCount] = useState(127);
-
   useEffect(() => {
-    const interval = setInterval(() => {
-      setViewerCount((prev) => {
-        const change = Math.floor(Math.random() * 5) - 2;
-        return Math.max(100, Math.min(150, prev + change));
-      });
-    }, 3000);
-    return () => clearInterval(interval);
+    // Initialize VTurb player timing
+    if (typeof window !== "undefined") {
+      (window as Window & { _plt?: number })._plt =
+        (window as Window & { _plt?: number })._plt ||
+        (performance && performance.timeOrigin
+          ? performance.timeOrigin + performance.now()
+          : Date.now());
+    }
   }, []);
 
   return (
     <div className="min-h-[calc(100vh-56px)] flex flex-col items-center justify-center px-4 py-8">
+      {/* VTurb Player Script */}
+      <Script
+        src="https://scripts.converteai.net/1b27179a-ba8a-4485-adab-86acabe00490/players/69ec3cb779a9b357d90e199b/v4/player.js"
+        strategy="afterInteractive"
+      />
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -37,34 +43,13 @@ export function VideoLanding({ onStartQuiz }: VideoLandingProps) {
           <strong className="text-primary">Protocolo Del Bicarbonato personalizado</strong>
         </p>
 
-        {/* Video Container */}
-        <div className="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl mb-6">
-          {/* Placeholder Video */}
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-black">
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/10 backdrop-blur cursor-pointer hover:bg-white/20 transition-all">
-                  <Play className="h-10 w-10 text-white ml-1" />
-                </div>
-              </div>
-              <p className="text-white/60 text-sm">Video de presentación</p>
-            </div>
-          </div>
-
-          {/* Live Badge */}
-          <div className="absolute top-4 left-4 flex items-center gap-2 rounded-full bg-black/50 backdrop-blur px-3 py-1.5">
-            <div className="relative flex items-center gap-1.5">
-              <Radio className="h-3.5 w-3.5 text-red-500 animate-pulse" />
-              <span className="text-xs font-semibold text-white">EN VIVO</span>
-            </div>
-          </div>
-
-          {/* Viewer Count */}
-          <div className="absolute top-4 right-4 flex items-center gap-2 rounded-full bg-black/50 backdrop-blur px-3 py-1.5">
-            <Users className="h-3.5 w-3.5 text-white" />
-            <span className="text-xs font-medium text-white">{viewerCount}</span>
-            <span className="text-xs text-white/60">viendo</span>
-          </div>
+        {/* VTurb Video Player */}
+        <div className="w-full rounded-2xl overflow-hidden shadow-2xl mb-6">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `<vturb-smartplayer id="vid-69ec3cb779a9b357d90e199b" style="display: block; margin: 0 auto; width: 100%; max-width: 100%;"></vturb-smartplayer>`,
+            }}
+          />
         </div>
 
         {/* CTA Button */}
