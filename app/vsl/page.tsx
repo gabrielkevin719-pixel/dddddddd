@@ -84,12 +84,12 @@ export default function VSLPage() {
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <div
               dangerouslySetInnerHTML={{
-                __html: `<vturb-smartplayer id="vid-69ec3cb779a9b357d90e199b" style="display: block; margin: 0 auto; width: 100%; max-width: 100%;"></vturb-smartplayer>`,
+                __html: `<vturb-smartplayer id="vid-69ec4a6579a9b357d90e3042" style="display: block; margin: 0 auto; width: 100%; max-width: 100%;"></vturb-smartplayer>`,
               }}
             />
           </div>
           <Script
-            src="https://scripts.converteai.net/1b27179a-ba8a-4485-adab-86acabe00490/players/69ec3cb779a9b357d90e199b/v4/player.js"
+            src="https://scripts.converteai.net/1b27179a-ba8a-4485-adab-86acabe00490/players/69ec4a6579a9b357d90e3042/v4/player.js"
             strategy="afterInteractive"
           />
         </motion.div>
