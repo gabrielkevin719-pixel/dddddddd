@@ -167,18 +167,20 @@ export default function OfertaPage() {
           transition={{ delay: 0.2 }}
           className="mb-10"
         >
-          <div className="relative aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-900 to-black">
-              <div className="text-center p-8">
-                <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-white/20 transition-all">
-                  <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-white border-b-8 border-b-transparent ml-1" />
-                </div>
-                <p className="text-white text-lg font-medium">
-                  Mira como funciona el Protocolo
-                </p>
-                <p className="text-white/60 text-sm mt-1">Duracion: 8 minutos</p>
-              </div>
-            </div>
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `
+                  <div id="vid-69ec3cb779a9b357d90e199b" style="display: block; margin: 0 auto; width: 100%; max-width: 100%;"></div>
+                  <script type="text/javascript">
+                    var s=document.createElement("script");
+                    s.src="https://scripts.converteai.net/1b27179a-ba8a-4485-adab-86acabe00490/players/69ec3cb779a9b357d90e199b/v4/player.js";
+                    s.async=true;
+                    document.head.appendChild(s);
+                  </script>
+                `,
+              }}
+            />
           </div>
         </motion.div>
 
