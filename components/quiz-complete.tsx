@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { CheckCircle, Loader2, ArrowRight, Shield, Clock, Star } from "lucide-react";
 
 export function QuizComplete() {
+  const router = useRouter();
   const [analyzing, setAnalyzing] = useState(true);
   const [progress, setProgress] = useState(0);
 
@@ -140,6 +142,7 @@ export function QuizComplete() {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => router.push("/oferta")}
             className="w-full flex items-center justify-center gap-3 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg py-4 px-6 shadow-lg shadow-primary/30 transition-all"
           >
             VER MI PROTOCOLO PERSONALIZADO
