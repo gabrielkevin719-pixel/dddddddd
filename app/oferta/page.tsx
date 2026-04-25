@@ -311,7 +311,7 @@ export default function OfertaPage() {
             <div className="mb-6">
               <div className="flex items-center justify-center gap-3 mb-2">
                 <span className="text-2xl text-muted-foreground line-through">$197</span>
-                <span className="text-5xl font-bold text-primary">$47</span>
+                <span className="text-5xl font-bold text-primary">$99</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 Pago unico - Sin suscripciones ocultas
@@ -336,7 +336,10 @@ export default function OfertaPage() {
             </div>
 
             {/* CTA Button */}
-            <motion.button
+            <motion.a
+              href="https://pay.mycheckoutt.com/019dadf8-7741-7094-8690-6b05edd52fc8?ref="
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="w-full flex items-center justify-center gap-3 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-5 px-6 shadow-lg shadow-primary/30 transition-all mb-4"
@@ -344,7 +347,7 @@ export default function OfertaPage() {
               <Lock className="h-5 w-5" />
               OBTENER MI PROTOCOLO AHORA
               <ArrowRight className="h-5 w-5" />
-            </motion.button>
+            </motion.a>
 
             {/* Trust Badges */}
             <div className="flex items-center justify-center gap-4 flex-wrap">
@@ -429,7 +432,10 @@ export default function OfertaPage() {
           transition={{ delay: 0.9 }}
           className="text-center pb-8"
         >
-          <motion.button
+          <motion.a
+            href="https://pay.mycheckoutt.com/019dadf8-7741-7094-8690-6b05edd52fc8?ref="
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="w-full max-w-md mx-auto flex items-center justify-center gap-3 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg py-5 px-6 shadow-lg shadow-primary/30 transition-all"
@@ -437,7 +443,7 @@ export default function OfertaPage() {
             <Flame className="h-5 w-5" />
             SI, QUIERO TRANSFORMAR MI SALUD
             <ArrowRight className="h-5 w-5" />
-          </motion.button>
+          </motion.a>
           <p className="text-sm text-muted-foreground mt-4">
             Solo quedan {spotsLeft} lugares al precio de oferta
           </p>
@@ -446,14 +452,17 @@ export default function OfertaPage() {
 
       {/* Sticky Bottom CTA for Mobile */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-border p-4 md:hidden z-50">
-        <motion.button
+        <motion.a
+          href="https://pay.mycheckoutt.com/019dadf8-7741-7094-8690-6b05edd52fc8?ref="
+          target="_blank"
+          rel="noopener noreferrer"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           className="w-full flex items-center justify-center gap-2 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-4 px-6 shadow-lg shadow-primary/30 transition-all"
         >
           <Lock className="h-5 w-5" />
-          OBTENER PROTOCOLO - $47
-        </motion.button>
+          OBTENER PROTOCOLO - $99
+        </motion.a>
       </div>
     </div>
   );
